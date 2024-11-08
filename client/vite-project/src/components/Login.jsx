@@ -11,7 +11,7 @@ const Login = ({ onLoginSuccess }) => {
     setError('');
 
     try {
-      const response = await axios.post('http://localhost:8000/users/login', { email, password }, {
+      const response = await axios.post('https://news-site-csxz.onrender.com/users/login', { email, password }, {
         headers: {
           'Content-Type': 'application/json',
         }
