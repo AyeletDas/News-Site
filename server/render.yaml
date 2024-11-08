@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: flask-app
+    env: python
+    plan: free  # או 'starter' אם את משתמשת בחשבון בתשלום
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"  # החליפי ב-main.py או בשם קובץ האפליקציה שלך
+    envVars:
+      - key: FLASK_ENV
+        value: production
