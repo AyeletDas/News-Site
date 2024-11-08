@@ -16,7 +16,7 @@ const CategoryPage = () => {
     const fetchArticles = async () => {
         try {
             const response = await axios.get(
-                `http://localhost:8000/articles?category=${categoryName}&limit=10&username=${username}`
+                `https://news-site-csxz.onrender.com/articles?category=${categoryName}&limit=10&username=${username}`
             );
             const uniqueArticles = response.data.filter(
                 (value, index, self) => index === self.findIndex((t) => t.id === value.id)
