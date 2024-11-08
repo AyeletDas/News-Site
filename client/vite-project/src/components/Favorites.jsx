@@ -15,7 +15,7 @@ const Favorites = () => {
   useEffect(() => {
     const fetchFavorites = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/users/${userId}/favorites`);
+        const response = await axios.get(`https://news-site-csxz.onrender.com/users/${userId}/favorites`);
         setFavorites(response.data.favorites || []);
       } catch (err) {
         console.error('Error checking favorite status:', err);
@@ -39,7 +39,7 @@ const Favorites = () => {
 
   const handleDelete = async (articleId) => {
     try {
-      const response = await axios.delete(`http://localhost:8000/users/${userId}/favorites/${articleId}`);
+      const response = await axios.delete(`https://news-site-csxz.onrender.com/users/${userId}/favorites/${articleId}`);
       if (response.status === 200) {
         setFavorites(prevFavorites => prevFavorites.filter(article => article.id !== articleId));
         showNotification('הכתבה נמחקה בהצלחה מהמועדפים');
@@ -58,7 +58,7 @@ const Favorites = () => {
     setFavorites(updatedFavorites);
 
     try {
-      await axios.put(`http://localhost:8000/users/${userId}/favorites/order`, {
+      await axios.put(`https://news-site-csxz.onrender.com/users/${userId}/favorites/order`, {
         favorites: updatedFavorites.map(article => article.id)
       });
     } catch (error) {
