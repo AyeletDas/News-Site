@@ -68,7 +68,7 @@ const HomePage = () => {
 
             for (const category of Object.keys(categories)) {
                 if (category !== 'homePage') {
-                    const response = await axios.get(`http://localhost:8000/articles?category=${category}&limit=10`);
+                    const response = await axios.get(`https://news-site-csxz.onrender.com/articles?category=${category}&limit=10`);
                     console.log(`Response data for category ${category}:`, response.data);
 
                     const filteredData = filterArticlesByDate(Array.isArray(response.data) ? response.data : Object.values(response.data));
