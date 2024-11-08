@@ -22,7 +22,7 @@ const ArticleCard = ({ article, onSaveArticle, onRemoveArticle }) => {
 
         try {
             const response = await axios.get(
-                `http://localhost:8000/users/${userId}/favorites/${article.id || article._id}`,
+                `https://news-site-csxz.onrender.com/users/${userId}/favorites/${article.id || article._id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`
@@ -47,7 +47,7 @@ const ArticleCard = ({ article, onSaveArticle, onRemoveArticle }) => {
         try {
             if (isFavorite) {
                 const response = await axios.delete(
-                    `http://localhost:8000/users/${userId}/favorites/${article.id || article._id}`,
+                    `https://news-site-csxz.onrender.com/users/${userId}/favorites/${article.id || article._id}`,
                     {
                         headers: {
                             Authorization: `Bearer ${token}`,
@@ -65,7 +65,7 @@ const ArticleCard = ({ article, onSaveArticle, onRemoveArticle }) => {
                 }
             } else {
                 const response = await axios.put(
-                    `http://localhost:8000/users/favorites/${article.id || article._id}`,
+                    `https://news-site-csxz.onrender.com/users/favorites/${article.id || article._id}`,
                     { article },
                     {
                         headers: {

@@ -21,7 +21,7 @@ const Register = ({ onSwitchToLogin }) => {
         }
 
         try {
-            const response = await axios.post('http://localhost:8000/users/register', {
+            const response = await axios.post('https://news-site-csxz.onrender.com/users/register', {
                 email,
                 password,
                 first_name: firstName,
